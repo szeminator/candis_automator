@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Candis Auto-Button</title>
+    <style>
+      body {
+        min-width: 180px;
+        font-family: sans-serif;
+        background: #f8f9fa;
+        margin: 0;
+        padding: 18px 16px 16px 16px;
+        box-sizing: border-box;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      label {
+        font-size: 13px;
+        margin-bottom: 6px;
+        display: block;
+        color: #333;
+      }
+      #delayInput {
+        width: 100%;
+        padding: 8px;
+        font-size: 15px;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        background: #fff;
+      }
+      #startBtn {
+        width: 100%;
+        padding: 12px 0;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background: #888;
+        transition: background 0.2s, box-shadow 0.2s;
+        font-size: 16px;
+        margin-top: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        cursor: pointer;
+        outline: none;
+      }
+      #startBtn.on {
+        background: #27ae60;
+        box-shadow: 0 2px 12px rgba(39,174,96,0.10);
+      }
+      #startBtn.off {
+        background: #c0392b;
+        box-shadow: 0 2px 12px rgba(192,57,43,0.10);
+      }
+      #startBtn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+      #status {
+        margin-top: 18px;
+        text-align: center;
+        font-size: 15px;
+        color: #444;
+        min-height: 22px;
+      }
+      #timer {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #27ae60;
+        min-height: 30px;
+        display: none;
+      }
+      #timer.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <label for="delayInput">Delay (Sekunden):</label>
+      <input type="number" id="delayInput" min="1" max="60" value="3" />
+    </div>
+    <button id="startBtn" class="off">Autopilot OFF</button>
+    <div id="status">Autopilot ist deaktiviert</div>
+    <div id="timer"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
